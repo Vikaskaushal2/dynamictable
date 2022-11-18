@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .table{
+        font-size: 20px;
+    }
+    .btn{
+        height: 40px;
+        width: 100px;
+    }
+   
+</style>
+
+<body>
+    <table border="2px" class="table">
+        <thead class="head">
+            <tr>
+                <td>SL. NO</td>
+                <td>First Name</td>
+                <td>Last Name</td>
+                <td>City</td>
+                <td>Country</td>
+            </tr>
+        </thead>
+        <tr>
+            <td>1</td>
+            <td>vikas</td>
+            <td>kumar</td>
+            <td>amethi</td>
+            <td>india</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>shailendra</td>
+            <td>morya</td>
+            <td>prayagraj</td>
+            <td>india</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>ashis</td>
+            <td>yadav</td>
+            <td>banaras</td>
+            <td>india</td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>john</td>
+            <td>arin</td>
+            <td>losangles</td>
+            <td>america</td>
+        </tr>
+       
+    </table>
+      <div class="ctn">
+        <p>FILL THIS DETAILS TO INSERT A ROW IN THE TABLE</p>
+        sr no:<input type="text" id="slno">
+     name : <input type="text" id="name">
+     lastname : <input type="text" id="lastname">
+     city: <input type="text" id="city">
+     country : <input type="text" id="country"> <br>
+      </div>
+    <div class="container">
+        <button class="btn" id="bt1">Add row to buttom</button>
+    <button class="btn" id="bt2">Add row to up</button> 
+    </div>
+    <script>
+        var table=document.getElementsByClassName("table")[0]
+        var head=document.getElementsByClassName("head")[0]
+        let bt1=document.getElementById("bt1")  
+        let bt2=document.getElementById("bt2")  
+           bt1.addEventListener('click',()=>{
+       var srno=document.getElementById("slno").value
+        var name=document.getElementById("name").value
+          var lastname=document.getElementById("lastname").value
+        var city=document.getElementById("city").value
+        var country=document.getElementById("country").value
+        let templete=`   <tr>
+            <td>${srno}</td>
+            <td>${name}</td>
+            <td>${lastname}</td>
+            <td>${city}</td>
+            <td>${country}</td>
+        </tr>`
+           table.innerHTML +=templete
+           })
+           bt2.addEventListener('click',()=>{
+       var srno=document.getElementById("slno").value
+        var name=document.getElementById("name").value
+          var lastname=document.getElementById("lastname").value
+        var city=document.getElementById("city").value
+        var country=document.getElementById("country").value
+        let templete=`   <tr>
+            <td>${srno}</td>
+            <td>${name}</td>
+            <td>${lastname}</td> 
+            <td>${city}</td>
+            <td>${country}</td>
+        </tr>`
+           head.innerHTML +=templete
+           })
+          </script>
+</body>
+</html>
